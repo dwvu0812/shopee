@@ -1,0 +1,225 @@
+.header {
+    height: 120px;
+    background-image: linear-gradient(0, #fe6433, #f6412e);
+
+}
+.header__navbar {
+    display: flex;
+    justify-content: space-between;
+}
+.header__navbar-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 8px;
+}
+.header__navbar-item{
+    margin: 0 8px;
+    position: relative;
+}
+.header__navbar-item-link,
+.header__navbar-item {
+    display: inline-block;
+    font-size: 1.4rem;
+    color: var(--white-color);
+    text-decoration: none;
+    font-weight: 350;
+}
+.header__navbar-icon-link:hover,
+.header__navbar-item-link:hover,
+.header__navbar-item:hover {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7)
+}
+
+.header__navbar-item--qr:hover .header__qr {
+    display: block;
+}
+
+.header__navbar-item--strong {
+    font-weight: 400;
+}
+
+.header__navbar-item--seperate::after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-left: 1px solid #FB9086;
+    height: 15px;
+    right: -9px;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.header__navbar-icon-link {
+    color: var(--white-color);
+    text-decoration: none;
+}
+
+.header__navbar-icon {
+    font-size: 18px;
+    margin: 0 4px;
+}
+
+.header__navbar-title--nopointer {
+    cursor: text;
+    color: var(--white-color);
+    
+}
+/* Header QR code */
+.header__qr {
+    background-color: var(--white-color);
+    width: 186px;
+    position: absolute;
+    left: 0;
+    top: 150%;
+    padding: 8px;
+    border-radius: 2px;
+    display: none;
+    animation: fadeIn ease-in 0.3s;
+}
+
+.header__qr::before {
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    content: "";
+    display: block;
+    left: 0;
+    top: -20px;
+    /* background-color: #ccc; */
+}
+.header__qr-img {
+    width: 100%;
+}
+
+.header__qr-apps {
+    display: flex;
+    justify-content:space-between;
+}
+
+.header__qr-downloading {
+    height: 16px;
+}
+
+.header__qr-link:first-child {
+    margin-left: 11px;
+}
+.header__qr-link:last-child {
+    margin-right: 11px;
+}
+
+/* Header Notify */
+
+.header__notify {
+    position: absolute;
+    top: 118%;
+    width: 404px;
+    background-color: var(--white-color);
+    right: 0;
+    border: 1px solid #D3D3D3;
+    cursor: default;
+    user-select: none;
+    transform-origin: 90% top;
+    animation: headerNotifyGrowth ease-in 0.2s;
+    will-change: transform, opacity;
+    display: none;
+}
+
+.header__notify::before {
+    content: "";
+    border-width: 20px 30px;
+    border-style: solid;
+    border-color: transparent transparent var(--white-color) transparent;
+    position: absolute;
+    right: 12px;
+    top: -27px;
+}
+.header__notify::after {
+    content: "";
+    position: absolute;
+    right: 0px;
+    top: -27px;
+    width: 90px;
+    height: 25px;
+
+}
+
+@keyframes headerNotifyGrowth {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.header__navbar-item--notify:hover .header__notify {
+    display: block;
+}
+
+.header__notify-header {
+    height: 40px;
+    background-color: var(--white-color);
+}
+
+.header__notify-header h3 {
+    color: #777;
+    margin: 0 0 0 12px;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 40px;
+}
+
+.header__notify-list {
+    padding-left: 0;
+}
+.header__notify-item {
+    display: flex;
+}
+
+.header__notify-item:hover {
+    background-color: #f7f7f7;
+}
+.header__notify-item--viewed {
+    background-color: rgba(246, 65, 46, 0.1);
+}
+.header__notify-link {
+    display: flex;
+    padding: 12px;
+    text-decoration: none;
+    width: 100%;
+    
+}
+.header__notify-img {
+    width: 48px;
+    object-fit: contain;
+}
+.header__notify-info {
+    margin-left: 12px;
+}
+.header__notify-name {
+    display: block;
+    font-size: 1.4rem;
+    color: #000;
+    font-weight: 400;
+    line-height: 1.8rem;
+}
+.header__notify-description {
+    display: block;
+    font-size: 1.2rem;
+    color: #000;
+    line-height: 1.6rem;
+    margin-top: 4px;
+}
+
+.header__notify-footer {
+    text-align: center;
+    padding: 8px;
+}
+.header__notify--btn {
+    text-decoration: none;
+    color: #000;
+    font-weight: 400;
+}
